@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>GeoScan 1.5.0</title>
+    </head>
+    <body style="text-align:center;">
+        <div id="mainscreen">
+            <div>
+                <h2 style="margin-top:10px">GeoScan 1.5.0, welcome!</h2>
+                <br/>
+                <button id="capture">Take Photo</button><button id="select">Select Photo</button>
+                <br/>
+                <br/>
+                <br/>
+                <h3 id="lum">Device has no Light Sensor/App has no permission</h3>
+                <br/>
+                <div id="content">
+                    <button id="share">Share(to drive)</button>
+                    <br/>
+                    <div id="contentstage">
+
+                    </div>
+                    <script>
+                        setInterval(function(){
+                            var stage = document.getElementById("contentstage");
+                            stage.innerHTML = ""
+                            NativeStorage.keys(function(keys){
+                                keys.forEach(function(key){
+                                    NativeStorage.getItem(key, function(value){
+                                        stage.innerHTML += '<hr><img src=\"'+value.img+'\" style="height:50%;width:50%"/><p>Name: '+value.name+'<br>Percentage: '+value.percentage+'<br>Lux: '+value.lux+'</p>';
+                                    });
+                                })
+                            },function(){alert("Could not fetch data")});
+                        }, 5000)
+                    </script>
+                </div>
+                <div id="extrasettings" style="margin-top:20px">
+                    <hr>
+                    <h1>Extra settings, don't need to change</h1>
+                    <hr>
+                    <button id="deldat">Delete data</button>
+                    <br/>
+                    <b>Sampling interval setting by pixels(Default 10)</b>
+                    <div>
+                        <input type="number" min="1" max="100" value="10" id="interval">
+                    </div>
+                    <small id="intervalval"></small>
+                    <br/>
+                    <br/>
+                    <b>Low Threshold(?)</b>
+                    <div>
+                        <input type="number" min="1" max="256" value="127.5" id="lowthreshold">
+                    </div>
+                    <small id="lowthresval"></small>
+                    <br />
+                    <b>High Threshold(?)</b>
+                    <div>
+                        <input type="number" min="1" max="256" value="127.5" id="highthreshold">
+                    </div>
+                    <br />
+                    <b>PL Threshold</b>
+                    <div>
+                        <input type="number" min="1" max="1" value="100" id="PL">
+                    </div>
+                    <small id="highthresval"></small>
+                    <script>
+                        setInterval(function(){
+                            document.getElementById("intervalval").innerHTML = document.getElementById("interval").value
+                            document.getElementById("lowthresval").innerHTML = document.getElementById("lowthreshold").value
+                            document.getElementById("highthresval").innerHTML = document.getElementById("highthreshold").value
+                        }, 500)
+                    </script>
+                </div>
+            </div>
+        </div>
+        <br />
+        <small>Daniel</small>
+    </body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</html>
+
+<!--<div class="card" style="width:18rem;">-->
+    <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+    <!--<div class="card-body">-->
+        <!--<p class="card-text">Geoscan placeholder.</p>-->
+        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+    <!--</div>-->
+<!--</div>-->

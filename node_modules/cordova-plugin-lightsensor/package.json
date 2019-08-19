@@ -1,0 +1,54 @@
+{
+  "_from": "git+https://github.com/DeshanKTD/cordova-plugin-lightsensor.git",
+  "_id": "cordova-plugin-lightsensor@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-lightsensor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/DeshanKTD/cordova-plugin-lightsensor",
+    "rawSpec": "https://github.com/DeshanKTD/cordova-plugin-lightsensor",
+    "saveSpec": "git+https://github.com/DeshanKTD/cordova-plugin-lightsensor.git",
+    "fetchSpec": "https://github.com/DeshanKTD/cordova-plugin-lightsensor.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/DeshanKTD/cordova-plugin-lightsensor.git#ba49e0de074c8acac9cde245a8fe6a8ed711a52f",
+  "_spec": "https://github.com/DeshanKTD/cordova-plugin-lightsensor",
+  "_where": "/Users/james/Projects/GeoScanner",
+  "author": {
+    "name": "Deshan Kalupahana"
+  },
+  "bugs": {
+    "url": "https://github.com/DeshanKTD/cordova-plugin-lightsensor/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-lightsensor",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Light Sensor Plugin",
+  "homepage": "https://github.com/DeshanKTD/cordova-plugin-lightsensor#readme",
+  "keywords": [
+    "cordova",
+    "light",
+    "illumination",
+    "ecosystem:cordova",
+    "length",
+    "close"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-lightsensor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeshanKTD/cordova-plugin-lightsensor.git"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,36 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    },
+    "cordova-plugin-lightsensor": {
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    },
+    "cordova-plugin-camera-preview": {
+      "ANDROID_SUPPORT_LIBRARY_VERSION": "26+",
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "sg.edu.sji.geoscan"
+    }
+  }
+}
